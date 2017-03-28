@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.http import HttpResponse
+from .models import Evento
+from .views import Home
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^listaEventos/', listaEventos),
+    url(r'^$',Home.addPessoa )
 ]
